@@ -1,3 +1,11 @@
+# Ubuntu
+
+The following are required to build on Ubuntu:
+
+```
+sudo apt-get install git libraspberrypi-dev linux-headers-raspi xinput-calibrator build-essential -y
+```
+
 # 2.8inch RPi LCD (A)
 
 ### Description:
