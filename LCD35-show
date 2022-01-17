@@ -22,6 +22,7 @@ fi
 
 echo "1" > ./boot/mark
 sudo apt-get install cmake -y
+mkdir -p ./rpi-fbcp/build/
 cd ./rpi-fbcp/build/
 sudo cmake ..
 sudo make

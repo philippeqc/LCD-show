@@ -24,6 +24,7 @@ echo "1" > ./boot/mark
 sudo dpkg -i -B ./xinput-calibrator_0.7.5-1_armhf.deb
 
 sudo apt-get install cmake -y
+mkdir -p ./rpi-fbcp/build/
 cd ./rpi-fbcp/build/
 sudo cmake ..
 sudo make
