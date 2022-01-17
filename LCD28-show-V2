@@ -65,8 +65,13 @@ elif test "$1" = "270" -o "$2" = "270"; then
 	echo "LCD configure 270"
 fi
 
-sudo cp ./waveshare28-v2.dtbo /boot/overlays/waveshare28-v2.dtbo
-sudo cp ./waveshare28-v2.dtbo /boot/overlays/waveshare28-v2-overlay.dtb
+if [[ -d "/boot/firmware/overlays" ]]; then
+	sudo cp ./waveshare28-v2.dtbo /boot/firmware/overlays/waveshare28-v2.dtbo
+	sudo cp ./waveshare28-v2.dtbo /boot/firmware/overlays/waveshare28-v2-overlay.dtb
+else
+	sudo cp ./waveshare28-v2.dtbo /boot/overlays/waveshare28-v2.dtbo
+	sudo cp ./waveshare28-v2.dtbo /boot/overlays/waveshare28-v2-overlay.dtb
+fi
 
 
 if test "$var1" = "0"  ;then

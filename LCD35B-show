@@ -88,8 +88,13 @@ elif test "$1" = "270" -o "$2" = "270"; then
 	echo "LCD configure 270"
 fi
 
-sudo cp ./waveshare35b-overlay.dtb /boot/overlays/waveshare35b.dtbo
-sudo cp ./waveshare35b-overlay.dtb /boot/overlays/
+if [[ -d "/boot/firmware/overlays" ]]; then
+	sudo cp ./waveshare35a-overlay.dtb /boot/firmware/overlays/waveshare35a.dtbo
+	sudo cp ./waveshare35a-overlay.dtb /boot/firmware/overlays/
+else
+	sudo cp ./waveshare35a-overlay.dtb /boot/overlays/waveshare35a.dtbo
+	sudo cp ./waveshare35a-overlay.dtb /boot/overlays/
+fi
 #sudo cp -rf ./usr/share/X11/xorg.conf.d/99-fbturbo.conf  /usr/share/X11/xorg.conf.d/
 if [ -b /dev/mmcblk0p7 ]; then
 sudo cp ./cmdline.txt-noobs /boot/cmdline.txt
